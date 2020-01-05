@@ -5,18 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="npViewModel"
-            type="com.kdd.authentication.ui.vwmdl.AuthViewModel"/>
+            name="voViewModel"
+            type="com.kdd.authentication.ui.vwmdl.AuthViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fgmt.NewPassword">
+        tools:context=".ui.fgmt.VerifyOtp">
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -25,41 +26,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:hint="@string/password_hint"
+            android:hint="@string/otp_hint"
             android:autofillHints="" tools:targetApi="26"
-            android:inputType="textPassword"
-            android:text="@={npViewModel.password}"
-            />
-
-        <EditText
-            android:id="@+id/cpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/password"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="@string/password_hint"
-            android:autofillHints="" tools:targetApi="26"
-            android:inputType="textPassword"
-            android:text="@={npViewModel.cpassword}"
+            android:inputType="number"
+            android:text="@={voViewModel.otp + ``}"
             />
 
         <Button
-            android:id="@+id/updatepassword"
+            android:id="@+id/forgotpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cpassword"
+            app:layout_constraintTop_toBottomOf="@id/otp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/update_password_button_text"
-            android:onClick="@{npViewModel::onNewPassword}"
+            android:text="@string/validate_otp_button_text"
+            android:onClick="@{voViewModel::onValidateOtp}"
             />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

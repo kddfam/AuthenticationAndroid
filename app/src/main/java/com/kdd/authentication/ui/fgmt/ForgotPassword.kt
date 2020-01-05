@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import com.kdd.authentication.R
 import com.kdd.authentication.databinding.FragmentForgotPasswordBinding
@@ -55,6 +56,9 @@ class ForgotPassword : BaseFragment(), AuthListener {
     override fun onSuccess(message: String?) {
         mSnackbar = Snackbar.make(view!!, message.toString(), Snackbar.LENGTH_LONG)
         mSnackbar.show()
+
+        val action = ForgotPasswordDirections.forgotPasswordToVerifyOtp()
+        Navigation.findNavController(view!!).navigate(action)
     }
 
     override fun onFailed(message: String?) {

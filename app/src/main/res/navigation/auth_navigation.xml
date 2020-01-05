@@ -35,8 +35,8 @@
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
-            android:id="@+id/forgotPassToNewPass"
-            app:destination="@id/newPassword" />
+            android:id="@+id/forgotPasswordToVerifyOtp"
+            app:destination="@id/verifyOtp" />
     </fragment>
     <fragment
         android:id="@+id/newPassword"
@@ -52,4 +52,13 @@
         android:name="com.kdd.authentication.ui.fgmt.Main"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/verifyOtp"
+        android:name="com.kdd.authentication.ui.fgmt.VerifyOtp"
+        android:label="fragment_verify_otp"
+        tools:layout="@layout/fragment_verify_otp" >
+        <action
+            android:id="@+id/verifyOtpToNewPassword"
+            app:destination="@id/newPassword" />
+    </fragment>
 </navigation>

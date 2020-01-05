@@ -14,4 +14,7 @@ interface UserDao {
     @Query("SELECT * FROM user")
     suspend fun listUser() : List<UserEntity>
 
+    @Query("UPDATE user SET password=:password")
+    suspend fun updatePassword(password : String?)
+
 }

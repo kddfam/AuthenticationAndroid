@@ -13,4 +13,7 @@
     <string name="register_here">Register Here</string>
     <string name="forgot_password_button_text">Send OTP</string>
     <string name="fp_here">Forgot Password?</string>
+    <string name="otp_hint">OTP</string>
+    <string name="validate_otp_button_text">Validate</string>
+    <string name="update_password_button_text">Update Password</string>
 </resources>
